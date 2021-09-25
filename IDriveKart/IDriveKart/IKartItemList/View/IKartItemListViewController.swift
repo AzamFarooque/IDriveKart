@@ -76,12 +76,22 @@ extension IKartItemListViewController : UICollectionViewDelegate , UICollectionV
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: IkartItemListCollectionViewCell.identifier, for: indexPath) as! IkartItemListCollectionViewCell)
         cell.itemName.text = "\(presenter?.quotesStrings?[indexPath.row].name ?? "") Rs : \(presenter?.quotesStrings?[indexPath.row].price ?? "" )"
         cell.itemDescription.text = presenter?.quotesStrings?[indexPath.row].description ?? ""
-        DispatchQueue.main.async{
-            cell.itemImgView.loadImage(fromURL: URL(string : self.presenter?.quotesStrings?[indexPath.row].image ?? "")!)
-        }
-        cell.backgroundColor = .green
+//        DispatchQueue.main.async{
+//            cell.itemImgView.loadImage(fromURL: URL(string : self.presenter?.quotesStrings?[indexPath.row].image ?? "")!)
+//        }
+        
+       
+     //   DispatchQueue.main.async {
+            let imgUrl = URL(string: self.presenter?.quotesStrings?[indexPath.row].image ?? "")
+            cell.itemImgView.loadImageWithUrl(imgUrl!)
+
+     //   }
+        
+        cell.backgroundColor = .white
         return cell
     }
+    
+    
  
 }
 
@@ -102,10 +112,17 @@ extension IKartItemListViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.backgroundColor = UIColor.red
+        collectionView.backgroundColor = .white
         self.view.addSubview(collectionView)
         
         self.navigationItem.title = "Simpsons Quotes"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cart", style: .plain, target: self, action: #selector(addTapped))
+
+
+    }
+    
+    @objc func addTapped(){
+        
     }
     
     func registerCell(){

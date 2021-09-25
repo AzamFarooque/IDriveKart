@@ -12,7 +12,13 @@ class IkartItemListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemDescription: UILabel!
     @IBOutlet weak var itemImgView: LazyImageView!
     @IBOutlet weak var itemName: UILabel!
+   
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        itemImgView.image = nil
     }
 }
