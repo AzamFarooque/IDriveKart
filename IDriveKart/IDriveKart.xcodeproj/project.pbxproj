@@ -1,0 +1,741 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8629DCDA26F652450063C9B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629DCD926F652450063C9B6 /* AppDelegate.swift */; };
+		8629DCDC26F652450063C9B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629DCDB26F652450063C9B6 /* SceneDelegate.swift */; };
+		8629DCE426F652450063C9B6 /* IDriveKart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8629DCE226F652450063C9B6 /* IDriveKart.xcdatamodeld */; };
+		8629DCE626F652470063C9B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8629DCE526F652470063C9B6 /* Assets.xcassets */; };
+		8629DCE926F652470063C9B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8629DCE726F652470063C9B6 /* LaunchScreen.storyboard */; };
+		8629DCF426F652470063C9B6 /* IDriveKartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629DCF326F652470063C9B6 /* IDriveKartTests.swift */; };
+		8629DCFF26F652470063C9B6 /* IDriveKartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629DCFE26F652470063C9B6 /* IDriveKartUITests.swift */; };
+		8629DD0F26F652890063C9B6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629DD0E26F652890063C9B6 /* APIManager.swift */; };
+		8678D92F26F70FBB007B1578 /* IDriveKartListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D92E26F70FBB007B1578 /* IDriveKartListService.swift */; };
+		8678D93126F71033007B1578 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93026F71033007B1578 /* APIClient.swift */; };
+		8678D93526F71D69007B1578 /* IKartItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93426F71D69007B1578 /* IKartItemListViewController.swift */; };
+		8678D93726F71D84007B1578 /* IKartItemListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93626F71D84007B1578 /* IKartItemListInteractor.swift */; };
+		8678D93926F71DB0007B1578 /* IKartItemListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93826F71DB0007B1578 /* IKartItemListPresenter.swift */; };
+		8678D93B26F71DC6007B1578 /* IkartItemListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93A26F71DC6007B1578 /* IkartItemListEntity.swift */; };
+		8678D93D26F71DDA007B1578 /* IkartItemListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93C26F71DDA007B1578 /* IkartItemListRouter.swift */; };
+		8679B2F826FED529003322A2 /* IkartItemListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679B2F726FED529003322A2 /* IkartItemListContract.swift */; };
+		8679B2FC26FEF0EF003322A2 /* IkartItemListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679B2FA26FEF0EF003322A2 /* IkartItemListCollectionViewCell.swift */; };
+		8679B2FD26FEF0EF003322A2 /* IkartItemListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8679B2FB26FEF0EF003322A2 /* IkartItemListCollectionViewCell.xib */; };
+		8679B2FF26FEFC15003322A2 /* IkartItemListGridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679B2FE26FEFC15003322A2 /* IkartItemListGridFlowLayout.swift */; };
+		8679B30126FEFEC0003322A2 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679B30026FEFEC0003322A2 /* LazyImageView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8629DCF026F652470063C9B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8629DCCE26F652450063C9B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8629DCD526F652450063C9B6;
+			remoteInfo = IDriveKart;
+		};
+		8629DCFB26F652470063C9B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8629DCCE26F652450063C9B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8629DCD526F652450063C9B6;
+			remoteInfo = IDriveKart;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8629DCD626F652450063C9B6 /* IDriveKart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDriveKart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8629DCD926F652450063C9B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8629DCDB26F652450063C9B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8629DCE326F652450063C9B6 /* IDriveKart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IDriveKart.xcdatamodel; sourceTree = "<group>"; };
+		8629DCE526F652470063C9B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8629DCE826F652470063C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8629DCEA26F652470063C9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8629DCEF26F652470063C9B6 /* IDriveKartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDriveKartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8629DCF326F652470063C9B6 /* IDriveKartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDriveKartTests.swift; sourceTree = "<group>"; };
+		8629DCF526F652470063C9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8629DCFA26F652470063C9B6 /* IDriveKartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDriveKartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8629DCFE26F652470063C9B6 /* IDriveKartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDriveKartUITests.swift; sourceTree = "<group>"; };
+		8629DD0026F652470063C9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8629DD0E26F652890063C9B6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		8678D92E26F70FBB007B1578 /* IDriveKartListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDriveKartListService.swift; sourceTree = "<group>"; };
+		8678D93026F71033007B1578 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		8678D93426F71D69007B1578 /* IKartItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKartItemListViewController.swift; sourceTree = "<group>"; };
+		8678D93626F71D84007B1578 /* IKartItemListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKartItemListInteractor.swift; sourceTree = "<group>"; };
+		8678D93826F71DB0007B1578 /* IKartItemListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKartItemListPresenter.swift; sourceTree = "<group>"; };
+		8678D93A26F71DC6007B1578 /* IkartItemListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartItemListEntity.swift; sourceTree = "<group>"; };
+		8678D93C26F71DDA007B1578 /* IkartItemListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartItemListRouter.swift; sourceTree = "<group>"; };
+		8679B2F726FED529003322A2 /* IkartItemListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartItemListContract.swift; sourceTree = "<group>"; };
+		8679B2FA26FEF0EF003322A2 /* IkartItemListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartItemListCollectionViewCell.swift; sourceTree = "<group>"; };
+		8679B2FB26FEF0EF003322A2 /* IkartItemListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IkartItemListCollectionViewCell.xib; sourceTree = "<group>"; };
+		8679B2FE26FEFC15003322A2 /* IkartItemListGridFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartItemListGridFlowLayout.swift; sourceTree = "<group>"; };
+		8679B30026FEFEC0003322A2 /* LazyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8629DCD326F652450063C9B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8629DCEC26F652470063C9B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8629DCF726F652470063C9B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8629DCCD26F652450063C9B6 = {
+			isa = PBXGroup;
+			children = (
+				8629DCD826F652450063C9B6 /* IDriveKart */,
+				8629DCF226F652470063C9B6 /* IDriveKartTests */,
+				8629DCFD26F652470063C9B6 /* IDriveKartUITests */,
+				8629DCD726F652450063C9B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8629DCD726F652450063C9B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8629DCD626F652450063C9B6 /* IDriveKart.app */,
+				8629DCEF26F652470063C9B6 /* IDriveKartTests.xctest */,
+				8629DCFA26F652470063C9B6 /* IDriveKartUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8629DCD826F652450063C9B6 /* IDriveKart */ = {
+			isa = PBXGroup;
+			children = (
+				8629DD0D26F652610063C9B6 /* AppDelegate */,
+				8629DD0C26F652570063C9B6 /* Manager */,
+				8678D92D26F70F39007B1578 /* Service */,
+				8629DD1026F652E30063C9B6 /* IKartItemList */,
+				8678D94026F7945E007B1578 /* IKartCartItemList */,
+				8629DCE526F652470063C9B6 /* Assets.xcassets */,
+				8629DCE726F652470063C9B6 /* LaunchScreen.storyboard */,
+				8629DCEA26F652470063C9B6 /* Info.plist */,
+				8629DCE226F652450063C9B6 /* IDriveKart.xcdatamodeld */,
+			);
+			path = IDriveKart;
+			sourceTree = "<group>";
+		};
+		8629DCF226F652470063C9B6 /* IDriveKartTests */ = {
+			isa = PBXGroup;
+			children = (
+				8629DCF326F652470063C9B6 /* IDriveKartTests.swift */,
+				8629DCF526F652470063C9B6 /* Info.plist */,
+			);
+			path = IDriveKartTests;
+			sourceTree = "<group>";
+		};
+		8629DCFD26F652470063C9B6 /* IDriveKartUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8629DCFE26F652470063C9B6 /* IDriveKartUITests.swift */,
+				8629DD0026F652470063C9B6 /* Info.plist */,
+			);
+			path = IDriveKartUITests;
+			sourceTree = "<group>";
+		};
+		8629DD0C26F652570063C9B6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8679B30026FEFEC0003322A2 /* LazyImageView.swift */,
+				8629DD0E26F652890063C9B6 /* APIManager.swift */,
+				8678D93026F71033007B1578 /* APIClient.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8629DD0D26F652610063C9B6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				8629DCDB26F652450063C9B6 /* SceneDelegate.swift */,
+				8629DCD926F652450063C9B6 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		8629DD1026F652E30063C9B6 /* IKartItemList */ = {
+			isa = PBXGroup;
+			children = (
+				8679B2F926FEF0D1003322A2 /* CollectionCell */,
+				8679B2F626FED510003322A2 /* Contract */,
+				8679B2F126FECF0C003322A2 /* View */,
+				8679B2F226FECF17003322A2 /* Interactor */,
+				8679B2F326FECF26003322A2 /* Presenter */,
+				8679B2F426FECF3D003322A2 /* Entity */,
+				8679B2F526FECF48003322A2 /* Router */,
+			);
+			path = IKartItemList;
+			sourceTree = "<group>";
+		};
+		8678D92D26F70F39007B1578 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8678D92E26F70FBB007B1578 /* IDriveKartListService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8678D94026F7945E007B1578 /* IKartCartItemList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IKartCartItemList;
+			sourceTree = "<group>";
+		};
+		8679B2F126FECF0C003322A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8678D93426F71D69007B1578 /* IKartItemListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8679B2F226FECF17003322A2 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8678D93626F71D84007B1578 /* IKartItemListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8679B2F326FECF26003322A2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8678D93826F71DB0007B1578 /* IKartItemListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8679B2F426FECF3D003322A2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				8678D93A26F71DC6007B1578 /* IkartItemListEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		8679B2F526FECF48003322A2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8678D93C26F71DDA007B1578 /* IkartItemListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8679B2F626FED510003322A2 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				8679B2F726FED529003322A2 /* IkartItemListContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		8679B2F926FEF0D1003322A2 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				8679B2FA26FEF0EF003322A2 /* IkartItemListCollectionViewCell.swift */,
+				8679B2FB26FEF0EF003322A2 /* IkartItemListCollectionViewCell.xib */,
+				8679B2FE26FEFC15003322A2 /* IkartItemListGridFlowLayout.swift */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8629DCD526F652450063C9B6 /* IDriveKart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8629DD0326F652470063C9B6 /* Build configuration list for PBXNativeTarget "IDriveKart" */;
+			buildPhases = (
+				8629DCD226F652450063C9B6 /* Sources */,
+				8629DCD326F652450063C9B6 /* Frameworks */,
+				8629DCD426F652450063C9B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IDriveKart;
+			productName = IDriveKart;
+			productReference = 8629DCD626F652450063C9B6 /* IDriveKart.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8629DCEE26F652470063C9B6 /* IDriveKartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8629DD0626F652470063C9B6 /* Build configuration list for PBXNativeTarget "IDriveKartTests" */;
+			buildPhases = (
+				8629DCEB26F652470063C9B6 /* Sources */,
+				8629DCEC26F652470063C9B6 /* Frameworks */,
+				8629DCED26F652470063C9B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8629DCF126F652470063C9B6 /* PBXTargetDependency */,
+			);
+			name = IDriveKartTests;
+			productName = IDriveKartTests;
+			productReference = 8629DCEF26F652470063C9B6 /* IDriveKartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8629DCF926F652470063C9B6 /* IDriveKartUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8629DD0926F652470063C9B6 /* Build configuration list for PBXNativeTarget "IDriveKartUITests" */;
+			buildPhases = (
+				8629DCF626F652470063C9B6 /* Sources */,
+				8629DCF726F652470063C9B6 /* Frameworks */,
+				8629DCF826F652470063C9B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8629DCFC26F652470063C9B6 /* PBXTargetDependency */,
+			);
+			name = IDriveKartUITests;
+			productName = IDriveKartUITests;
+			productReference = 8629DCFA26F652470063C9B6 /* IDriveKartUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8629DCCE26F652450063C9B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					8629DCD526F652450063C9B6 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					8629DCEE26F652470063C9B6 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 8629DCD526F652450063C9B6;
+					};
+					8629DCF926F652470063C9B6 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 8629DCD526F652450063C9B6;
+					};
+				};
+			};
+			buildConfigurationList = 8629DCD126F652450063C9B6 /* Build configuration list for PBXProject "IDriveKart" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8629DCCD26F652450063C9B6;
+			productRefGroup = 8629DCD726F652450063C9B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8629DCD526F652450063C9B6 /* IDriveKart */,
+				8629DCEE26F652470063C9B6 /* IDriveKartTests */,
+				8629DCF926F652470063C9B6 /* IDriveKartUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8629DCD426F652450063C9B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8629DCE926F652470063C9B6 /* LaunchScreen.storyboard in Resources */,
+				8679B2FD26FEF0EF003322A2 /* IkartItemListCollectionViewCell.xib in Resources */,
+				8629DCE626F652470063C9B6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8629DCED26F652470063C9B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8629DCF826F652470063C9B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8629DCD226F652450063C9B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8629DCE426F652450063C9B6 /* IDriveKart.xcdatamodeld in Sources */,
+				8678D93D26F71DDA007B1578 /* IkartItemListRouter.swift in Sources */,
+				8678D93726F71D84007B1578 /* IKartItemListInteractor.swift in Sources */,
+				8679B30126FEFEC0003322A2 /* LazyImageView.swift in Sources */,
+				8678D92F26F70FBB007B1578 /* IDriveKartListService.swift in Sources */,
+				8629DD0F26F652890063C9B6 /* APIManager.swift in Sources */,
+				8679B2FC26FEF0EF003322A2 /* IkartItemListCollectionViewCell.swift in Sources */,
+				8679B2FF26FEFC15003322A2 /* IkartItemListGridFlowLayout.swift in Sources */,
+				8678D93926F71DB0007B1578 /* IKartItemListPresenter.swift in Sources */,
+				8679B2F826FED529003322A2 /* IkartItemListContract.swift in Sources */,
+				8629DCDA26F652450063C9B6 /* AppDelegate.swift in Sources */,
+				8629DCDC26F652450063C9B6 /* SceneDelegate.swift in Sources */,
+				8678D93B26F71DC6007B1578 /* IkartItemListEntity.swift in Sources */,
+				8678D93126F71033007B1578 /* APIClient.swift in Sources */,
+				8678D93526F71D69007B1578 /* IKartItemListViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8629DCEB26F652470063C9B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8629DCF426F652470063C9B6 /* IDriveKartTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8629DCF626F652470063C9B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8629DCFF26F652470063C9B6 /* IDriveKartUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8629DCF126F652470063C9B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8629DCD526F652450063C9B6 /* IDriveKart */;
+			targetProxy = 8629DCF026F652470063C9B6 /* PBXContainerItemProxy */;
+		};
+		8629DCFC26F652470063C9B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8629DCD526F652450063C9B6 /* IDriveKart */;
+			targetProxy = 8629DCFB26F652470063C9B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8629DCE726F652470063C9B6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8629DCE826F652470063C9B6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8629DD0126F652470063C9B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8629DD0226F652470063C9B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8629DD0426F652470063C9B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IDriveKart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.farooque.IDriveKart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8629DD0526F652470063C9B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IDriveKart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.farooque.IDriveKart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8629DD0726F652470063C9B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IDriveKartTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.farooque.IDriveKartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDriveKart.app/IDriveKart";
+			};
+			name = Debug;
+		};
+		8629DD0826F652470063C9B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IDriveKartTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.farooque.IDriveKartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDriveKart.app/IDriveKart";
+			};
+			name = Release;
+		};
+		8629DD0A26F652470063C9B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IDriveKartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.farooque.IDriveKartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IDriveKart;
+			};
+			name = Debug;
+		};
+		8629DD0B26F652470063C9B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IDriveKartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.farooque.IDriveKartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IDriveKart;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8629DCD126F652450063C9B6 /* Build configuration list for PBXProject "IDriveKart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8629DD0126F652470063C9B6 /* Debug */,
+				8629DD0226F652470063C9B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8629DD0326F652470063C9B6 /* Build configuration list for PBXNativeTarget "IDriveKart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8629DD0426F652470063C9B6 /* Debug */,
+				8629DD0526F652470063C9B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8629DD0626F652470063C9B6 /* Build configuration list for PBXNativeTarget "IDriveKartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8629DD0726F652470063C9B6 /* Debug */,
+				8629DD0826F652470063C9B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8629DD0926F652470063C9B6 /* Build configuration list for PBXNativeTarget "IDriveKartUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8629DD0A26F652470063C9B6 /* Debug */,
+				8629DD0B26F652470063C9B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8629DCE226F652450063C9B6 /* IDriveKart.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8629DCE326F652450063C9B6 /* IDriveKart.xcdatamodel */,
+			);
+			currentVersion = 8629DCE326F652450063C9B6 /* IDriveKart.xcdatamodel */;
+			path = IDriveKart.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8629DCCE26F652450063C9B6 /* Project object */;
+}
