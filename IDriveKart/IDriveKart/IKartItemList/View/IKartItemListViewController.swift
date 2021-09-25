@@ -13,7 +13,8 @@ class IKartItemListViewController : UIViewController , PresenterToViewItemListPr
     
     func onFetchQuotesSuccess() {
         DispatchQueue.main.async {
-            self.collectionView.reloadData()
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
     
@@ -33,66 +34,42 @@ class IKartItemListViewController : UIViewController , PresenterToViewItemListPr
         
     }
     
-    let gridFlowLayout = IkartItemListGridFlowLayout()
     var presenter : ViewToPresenterItemListProtocol?
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
-        // refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         return refreshControl
     }()
     
+    // MARK: - Actions
+    @objc func refresh() {
+        presenter?.refresh()
+    }
+    
     
     var cellId = "IkartItemListCollectionViewCell"
-    lazy var collectionView : UICollectionView = {
-        let collectionView = UICollectionView()
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        return collectionView
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.rowHeight = 70
+        tableView.dataSource = self
+        tableView.delegate = self
+        return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
-       // registerCell()
+        // registerCell()
         presenter?.viewDidLoad()
         setupUI()
         registerCell()
         
         self.navigationItem.title = "IKart"
-       
-    }
-}
-
-
-extension IKartItemListViewController : UICollectionViewDelegate , UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter?.numberOfRowsInSection() ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: IkartItemListCollectionViewCell.identifier, for: indexPath) as! IkartItemListCollectionViewCell)
-        cell.itemName.text = "\(presenter?.quotesStrings?[indexPath.row].name ?? "") Rs : \(presenter?.quotesStrings?[indexPath.row].price ?? "" )"
-        cell.itemDescription.text = presenter?.quotesStrings?[indexPath.row].description ?? ""
-//        DispatchQueue.main.async{
-//            cell.itemImgView.loadImage(fromURL: URL(string : self.presenter?.quotesStrings?[indexPath.row].image ?? "")!)
-//        }
         
-       
-     //   DispatchQueue.main.async {
-            let imgUrl = URL(string: self.presenter?.quotesStrings?[indexPath.row].image ?? "")
-            cell.itemImgView.loadImageWithUrl(imgUrl!)
-
-     //   }
-        
-        cell.backgroundColor = .white
-        return cell
     }
-    
-    
- 
 }
 
 
@@ -101,24 +78,20 @@ extension IKartItemListViewController : UICollectionViewDelegate , UICollectionV
 extension IKartItemListViewController {
     func setupUI() {
         
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: view.frame.width, height: 700)
+        overrideUserInterfaceStyle = .light
+        self.view.addSubview(tableView)
+        tableView.addSubview(refreshControl)
         
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        tableView.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
         
-        self.collectionView.collectionViewLayout.invalidateLayout()
-        self.collectionView.setCollectionViewLayout(self.gridFlowLayout, animated: true)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.backgroundColor = .white
-        self.view.addSubview(collectionView)
+        self.navigationItem.title = "Simpsons Quotes"
         
         self.navigationItem.title = "Simpsons Quotes"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cart", style: .plain, target: self, action: #selector(addTapped))
-
-
+        
+        
     }
     
     @objc func addTapped(){
@@ -126,8 +99,8 @@ extension IKartItemListViewController {
     }
     
     func registerCell(){
-        let nib1 = UINib(nibName: IkartItemListCollectionViewCell.identifier, bundle: nil)
-        collectionView.register(nib1, forCellWithReuseIdentifier: IkartItemListCollectionViewCell.identifier)
+        let nib1 = UINib(nibName: IkartItemListTableViewCell.identifier, bundle: nil)
+        tableView.register(nib1, forCellReuseIdentifier: IkartItemListTableViewCell.identifier)
         
     }
 }
@@ -137,5 +110,31 @@ extension UIView {
     
     static var identifier: String {
         return String(describing: self)
+    }
+}
+
+
+extension IKartItemListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter?.numberOfRowsInSection() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+        let cell = (tableView.dequeueReusableCell(withIdentifier: IkartItemListTableViewCell.identifier, for: indexPath) as! IkartItemListTableViewCell)
+        
+        cell.itemName.text = "\(presenter?.quotesStrings?[indexPath.row].name ?? "")"
+        cell.itemPrice.text = "₹ : \(presenter?.quotesStrings?[indexPath.row].price ?? "")"
+        cell.itemDescription.text = presenter?.quotesStrings?[indexPath.row].description ?? ""
+        
+        let imgUrl = URL(string: self.presenter?.quotesStrings?[indexPath.row].image ?? "")
+        cell.itemImgView.loadImageWithUrl(imgUrl!)
+        
+        return cell
     }
 }

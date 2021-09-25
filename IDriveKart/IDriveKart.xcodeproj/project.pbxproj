@@ -23,10 +23,9 @@
 		8678D93B26F71DC6007B1578 /* IkartItemListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93A26F71DC6007B1578 /* IkartItemListEntity.swift */; };
 		8678D93D26F71DDA007B1578 /* IkartItemListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93C26F71DDA007B1578 /* IkartItemListRouter.swift */; };
 		8679B2F826FED529003322A2 /* IkartItemListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679B2F726FED529003322A2 /* IkartItemListContract.swift */; };
-		8679B2FC26FEF0EF003322A2 /* IkartItemListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679B2FA26FEF0EF003322A2 /* IkartItemListCollectionViewCell.swift */; };
-		8679B2FD26FEF0EF003322A2 /* IkartItemListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8679B2FB26FEF0EF003322A2 /* IkartItemListCollectionViewCell.xib */; };
-		8679B2FF26FEFC15003322A2 /* IkartItemListGridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679B2FE26FEFC15003322A2 /* IkartItemListGridFlowLayout.swift */; };
 		8679B30126FEFEC0003322A2 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679B30026FEFEC0003322A2 /* LazyImageView.swift */; };
+		8679B30526FF1E18003322A2 /* IkartItemListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679B30326FF1E18003322A2 /* IkartItemListTableViewCell.swift */; };
+		8679B30626FF1E18003322A2 /* IkartItemListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8679B30426FF1E18003322A2 /* IkartItemListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,10 +68,9 @@
 		8678D93A26F71DC6007B1578 /* IkartItemListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartItemListEntity.swift; sourceTree = "<group>"; };
 		8678D93C26F71DDA007B1578 /* IkartItemListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartItemListRouter.swift; sourceTree = "<group>"; };
 		8679B2F726FED529003322A2 /* IkartItemListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartItemListContract.swift; sourceTree = "<group>"; };
-		8679B2FA26FEF0EF003322A2 /* IkartItemListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartItemListCollectionViewCell.swift; sourceTree = "<group>"; };
-		8679B2FB26FEF0EF003322A2 /* IkartItemListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IkartItemListCollectionViewCell.xib; sourceTree = "<group>"; };
-		8679B2FE26FEFC15003322A2 /* IkartItemListGridFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartItemListGridFlowLayout.swift; sourceTree = "<group>"; };
 		8679B30026FEFEC0003322A2 /* LazyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
+		8679B30326FF1E18003322A2 /* IkartItemListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartItemListTableViewCell.swift; sourceTree = "<group>"; };
+		8679B30426FF1E18003322A2 /* IkartItemListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IkartItemListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +174,7 @@
 		8629DD1026F652E30063C9B6 /* IKartItemList */ = {
 			isa = PBXGroup;
 			children = (
-				8679B2F926FEF0D1003322A2 /* CollectionCell */,
+				8679B30226FF1DF7003322A2 /* TableCell */,
 				8679B2F626FED510003322A2 /* Contract */,
 				8679B2F126FECF0C003322A2 /* View */,
 				8679B2F226FECF17003322A2 /* Interactor */,
@@ -250,14 +248,13 @@
 			path = Contract;
 			sourceTree = "<group>";
 		};
-		8679B2F926FEF0D1003322A2 /* CollectionCell */ = {
+		8679B30226FF1DF7003322A2 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
-				8679B2FA26FEF0EF003322A2 /* IkartItemListCollectionViewCell.swift */,
-				8679B2FB26FEF0EF003322A2 /* IkartItemListCollectionViewCell.xib */,
-				8679B2FE26FEFC15003322A2 /* IkartItemListGridFlowLayout.swift */,
+				8679B30326FF1E18003322A2 /* IkartItemListTableViewCell.swift */,
+				8679B30426FF1E18003322A2 /* IkartItemListTableViewCell.xib */,
 			);
-			path = CollectionCell;
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,8 +360,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8679B30626FF1E18003322A2 /* IkartItemListTableViewCell.xib in Resources */,
 				8629DCE926F652470063C9B6 /* LaunchScreen.storyboard in Resources */,
-				8679B2FD26FEF0EF003322A2 /* IkartItemListCollectionViewCell.xib in Resources */,
 				8629DCE626F652470063C9B6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,8 +393,7 @@
 				8679B30126FEFEC0003322A2 /* LazyImageView.swift in Sources */,
 				8678D92F26F70FBB007B1578 /* IDriveKartListService.swift in Sources */,
 				8629DD0F26F652890063C9B6 /* APIManager.swift in Sources */,
-				8679B2FC26FEF0EF003322A2 /* IkartItemListCollectionViewCell.swift in Sources */,
-				8679B2FF26FEFC15003322A2 /* IkartItemListGridFlowLayout.swift in Sources */,
+				8679B30526FF1E18003322A2 /* IkartItemListTableViewCell.swift in Sources */,
 				8678D93926F71DB0007B1578 /* IKartItemListPresenter.swift in Sources */,
 				8679B2F826FED529003322A2 /* IkartItemListContract.swift in Sources */,
 				8629DCDA26F652450063C9B6 /* AppDelegate.swift in Sources */,

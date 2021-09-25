@@ -22,7 +22,7 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     
     
     func refresh() {
-        
+        interactor?.loadQuotes()
     }
     
     func numberOfRowsInSection() -> Int {
