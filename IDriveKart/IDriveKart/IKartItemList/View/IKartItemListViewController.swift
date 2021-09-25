@@ -35,7 +35,8 @@ class IKartItemListViewController : UIViewController , PresenterToViewItemListPr
     }
     
     var presenter : ViewToPresenterItemListProtocol?
-    
+    let pagingSpinner = UIActivityIndicatorView(style: .gray)
+    var offset : Int = 0
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
@@ -136,5 +137,21 @@ extension IKartItemListViewController: UITableViewDelegate, UITableViewDataSourc
         cell.itemImgView.loadImageWithUrl(imgUrl!)
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == (presenter?.numberOfRowsInSection())! - 1 && (presenter?.numberOfRowsInSection())! < 77{
+        offset += 10
+        presenter?.loadNextPage(offset: offset)
+        self.setTableFooter()
+        }
+    }
+    
+    func setTableFooter()  {
+        pagingSpinner.startAnimating()
+        pagingSpinner.color = UIColor.black
+        pagingSpinner.hidesWhenStopped = true
+        tableView.tableFooterView = pagingSpinner
     }
 }

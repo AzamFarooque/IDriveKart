@@ -9,7 +9,7 @@ import Foundation
 
 
 class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
-    
+    private let manager: DataBaseManager = DataBaseManager()
     var presenter: InteractorToPresenterItemListProtocol?
     
     var quotes: [IKartItem]?
@@ -19,10 +19,15 @@ class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
         APIClient.shared.getAPiData(requestURL: urlString!, resultType: IKartItem.self) { [weak self] (data, error) in
             if error == nil {
                 self?.quotes = data as? [IKartItem]
-                self?.presenter?.fetchQuotesSuccess(quotes: self?.quotes ?? [])
+                self?.manager.saveItemList(employee: self?.quotes ?? [])
+                self?.presenter?.fetchQuotesSuccess(quotes: self?.manager.fetchItemList(offset: 0) ?? [])
             }else{
                 self?.presenter?.fetchQuotesFailure(errorCode: 0)
             }
         }
+    }
+    
+    func loadNextPage(offset : Int) {
+        self.presenter?.fetchQuotesSuccess(quotes: self.manager.fetchItemList(offset: offset) ?? [])
     }
 }

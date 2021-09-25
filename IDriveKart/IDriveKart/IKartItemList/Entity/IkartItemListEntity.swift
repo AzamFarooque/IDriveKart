@@ -14,4 +14,5 @@ struct IKartItem : Decodable {
     var image : String?
     var description : String?
     var price : String?
+    var inCart : Bool?
 }

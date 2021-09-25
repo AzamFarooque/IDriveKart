@@ -35,6 +35,8 @@ protocol ViewToPresenterItemListProtocol: AnyObject {
     
     func refresh()
     
+    func loadNextPage(offset : Int)
+    
     func numberOfRowsInSection() -> Int
     
     func didSelectRowAt(index: Int)
@@ -49,6 +51,8 @@ protocol PresenterToInteractorItemListProtocol: AnyObject {
     var presenter: InteractorToPresenterItemListProtocol? { get set }
     
     func loadQuotes()
+    
+    func loadNextPage(offset : Int)
   
 }
 

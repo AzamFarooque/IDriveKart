@@ -29,6 +29,9 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
         return quotesStrings?.count ?? 0
     }
     
+    func loadNextPage(offset: Int) {
+        interactor?.loadNextPage(offset: offset)
+    }
     
     
     func didSelectRowAt(index: Int) {
@@ -44,6 +47,7 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     }
     
     func viewDidLoad() {
+        self.quotesStrings = []
         view?.showHUD()
         interactor?.loadQuotes()
     }
@@ -54,7 +58,7 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
 extension IKartItemListPresenter : InteractorToPresenterItemListProtocol  {
     
     func fetchQuotesSuccess(quotes: [IKartItem]) {
-        self.quotesStrings = quotes
+        self.quotesStrings! += quotes
         view?.hideHUD()
         view?.onFetchQuotesSuccess()
     }
