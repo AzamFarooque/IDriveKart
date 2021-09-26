@@ -58,19 +58,19 @@ class IKartItemListViewController : UIViewController {
 
 extension IKartItemListViewController : PresenterToViewItemListProtocol{
     
-    func onFetchQuotesSuccess() {
+    func onFetchItemListSuccess() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }
     }
     
-    func onFetchQuotesFailure(error: String) {
+    func onFetchItemListFailure(error: String) {
         
     }
     
     func onFetchCartItemListSuccess(){
-        print(presenter?.iKartCartItemList?.count ?? 0)
+        
     }
     
     func showHUD() {

@@ -55,13 +55,13 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
 
 extension IKartItemListPresenter : InteractorToPresenterItemListProtocol  {
     
-    func fetchQuotesSuccess(quotes: [IKartItem]) {
-        self.iKartItemList! += quotes
+    func fetchItemListSuccess(itemsList: [IKartItem]) {
+        self.iKartItemList! += itemsList
         view?.hideHUD()
-        view?.onFetchQuotesSuccess()
+        view?.onFetchItemListSuccess()
     }
     
-    func fetchQuotesFailure(errorCode: Int) {
+    func fetchItemListFailure(errorCode: Int) {
         
     }
     

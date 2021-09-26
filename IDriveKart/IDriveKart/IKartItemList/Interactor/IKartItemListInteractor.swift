@@ -24,9 +24,9 @@ class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
             if error == nil {
                 self?.quotes = data as? [IKartItem]
                 self?.manager.saveItemList(employee: self?.quotes ?? [])
-                self?.presenter?.fetchQuotesSuccess(quotes: self?.manager.fetchItemList(offset: 0) ?? [])
+                self?.presenter?.fetchItemListSuccess(itemsList: self?.manager.fetchItemList(offset: 0) ?? [])
             }else{
-                self?.presenter?.fetchQuotesFailure(errorCode: 0)
+                self?.presenter?.fetchItemListFailure(errorCode: 0)
             }
         }
     }
@@ -34,7 +34,7 @@ class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
     // MARK: Pagination
     
     func loadNextPage(offset : Int) {
-        self.presenter?.fetchQuotesSuccess(quotes: self.manager.fetchItemList(offset: offset) ?? [])
+        self.presenter?.fetchItemListSuccess(itemsList: self.manager.fetchItemList(offset: offset) ?? [])
     }
     
     // MARK: Add to cart
