@@ -20,6 +20,9 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     var iKartCartItemList: [IKartItem]?
     
     
+    func pushToCartList() {
+        router?.pushToCartList(on: view!)
+    }
     
     
     func refresh() {

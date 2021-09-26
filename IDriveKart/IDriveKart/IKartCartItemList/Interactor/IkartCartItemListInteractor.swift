@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+
+class IkartCartItemListInteractor : PresenterToInteractorCartItemListProtocol{
+    var presenter: InteractorToPresenterCartItemListProtocol?
+    private let manager: DataBaseManager = DataBaseManager()
+    
+    func fetchcartList() {
+        self.presenter?.fetchCartItemList(quotes: self.manager.fetchCartItemList()!)
+    }
+ 
+}

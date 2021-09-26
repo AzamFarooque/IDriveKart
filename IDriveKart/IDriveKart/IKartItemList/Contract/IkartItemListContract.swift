@@ -48,6 +48,8 @@ protocol ViewToPresenterItemListProtocol: AnyObject {
     func didSelectRowAt(index: Int)
     func deselectRowAt(index: Int)
     
+    func pushToCartList()
+    
 }
 
 
@@ -83,5 +85,5 @@ protocol PresenterToRouterItemListProtocol: AnyObject {
     
     static func createModule() -> UINavigationController
     
-  //  func pushToQuoteDetail(on view: PresenterToViewItemListProtocol, with quote: Quote)
+    func pushToCartList(on view: PresenterToViewItemListProtocol)
 }

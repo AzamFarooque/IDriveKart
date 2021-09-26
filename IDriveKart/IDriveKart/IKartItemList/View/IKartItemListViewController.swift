@@ -98,7 +98,7 @@ extension IKartItemListViewController {
     }
     
     @objc func addTapped(){
-        
+        presenter?.pushToCartList()
     }
     
     func registerCell(){

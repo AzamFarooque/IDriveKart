@@ -5,7 +5,6 @@
 //  Created by Farooque Azam on 19/09/21.
 //
 
-import Foundation
 import UIKit
 
 
@@ -32,9 +31,14 @@ class IKartItemListRouter : PresenterToRouterItemListProtocol{
     }
     
     // MARK: - Navigation
-//    func pushToQuoteDetail(on view: PresenterToViewQuotesProtocol, with quote: Quote) {
-//
-//
-//    }
+    
+    func pushToCartList(on view: PresenterToViewItemListProtocol) {
+        
+        let quoteDetailViewController = IkartCartItemListRouter.createModule()
+        let viewController = view as! IKartItemListViewController
+        viewController.navigationController?
+            .pushViewController(quoteDetailViewController, animated: true)
+        
+    }
     
 }
