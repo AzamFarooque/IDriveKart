@@ -40,7 +40,7 @@ class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
     // MARK: Add to cart
     
     func addTocart(item: IKartItem) ->Bool {
-        return self.manager.updateCartValue(employee: item)
+        return self.manager.updateCartValue(item: item)
     }
     
     // MARK: Fetch cart list

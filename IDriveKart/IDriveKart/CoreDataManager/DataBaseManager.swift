@@ -24,7 +24,7 @@ struct DataBaseManager{
         return _itemDataRepository.fetchCartItemList()
     }
     
-    func updateCartValue(employee: IKartItem) -> Bool {
-        return _itemDataRepository.update(item: employee)
+    func updateCartValue(item: IKartItem) -> Bool {
+        return _itemDataRepository.update(item: item)
     }
 }

@@ -17,6 +17,6 @@ class IkartCartItemListInteractor : PresenterToInteractorCartItemListProtocol{
     }
     
     func removeItemFromcart(item: IKartItem) ->Bool {
-        return self.manager.updateCartValue(employee: item)
+        return self.manager.updateCartValue(item: item)
     }
 }
