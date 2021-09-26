@@ -9,14 +9,15 @@ import Foundation
 
 
 class IkartCartItemListPresenter : ViewToPresenterCartItemListProtocol{
-   
     
+    // MARK: Properties
     
     var view: PresenterToViewCartItemListProtocol?
     var interactor: PresenterToInteractorCartItemListProtocol?
     var router: PresenterToRouterCartItemListProtocol?
-    
     var iKartCartItemList: [IKartItem]?
+    
+    // MARK: Inputs from view
     
     func viewDidLoad() {
         view?.showHUD()
@@ -30,9 +31,9 @@ class IkartCartItemListPresenter : ViewToPresenterCartItemListProtocol{
     func numberOfRowsInSection() -> Int {
         return iKartCartItemList?.count ?? 0
     }
-    
 }
 
+// MARK: - Outputs to view
 
 extension IkartCartItemListPresenter : InteractorToPresenterCartItemListProtocol  {
     
