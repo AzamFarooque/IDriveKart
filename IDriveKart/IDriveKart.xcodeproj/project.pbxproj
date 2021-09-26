@@ -16,6 +16,11 @@
 		8629DCFF26F652470063C9B6 /* IDriveKartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629DCFE26F652470063C9B6 /* IDriveKartUITests.swift */; };
 		8629DD0F26F652890063C9B6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629DD0E26F652890063C9B6 /* APIManager.swift */; };
 		866E6A9227000EC200F8B294 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A9127000EC200F8B294 /* Button.swift */; };
+		866E6A9527004F5700F8B294 /* IkartCartItemListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A9427004F5700F8B294 /* IkartCartItemListContract.swift */; };
+		866E6A9727004FF100F8B294 /* IkartCartItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A9627004FF100F8B294 /* IkartCartItemListViewController.swift */; };
+		866E6A992700501800F8B294 /* IkartCartItemListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A982700501800F8B294 /* IkartCartItemListInteractor.swift */; };
+		866E6A9B2700503F00F8B294 /* IkartCartItemListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A9A2700503F00F8B294 /* IkartCartItemListPresenter.swift */; };
+		866E6A9D2700505800F8B294 /* IkartCartItemListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A9C2700505800F8B294 /* IkartCartItemListRouter.swift */; };
 		8678D92F26F70FBB007B1578 /* IDriveKartListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D92E26F70FBB007B1578 /* IDriveKartListService.swift */; };
 		8678D93126F71033007B1578 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93026F71033007B1578 /* APIClient.swift */; };
 		8678D93526F71D69007B1578 /* IKartItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93426F71D69007B1578 /* IKartItemListViewController.swift */; };
@@ -67,6 +72,11 @@
 		8629DD0026F652470063C9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8629DD0E26F652890063C9B6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		866E6A9127000EC200F8B294 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		866E6A9427004F5700F8B294 /* IkartCartItemListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartCartItemListContract.swift; sourceTree = "<group>"; };
+		866E6A9627004FF100F8B294 /* IkartCartItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartCartItemListViewController.swift; sourceTree = "<group>"; };
+		866E6A982700501800F8B294 /* IkartCartItemListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartCartItemListInteractor.swift; sourceTree = "<group>"; };
+		866E6A9A2700503F00F8B294 /* IkartCartItemListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartCartItemListPresenter.swift; sourceTree = "<group>"; };
+		866E6A9C2700505800F8B294 /* IkartCartItemListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartCartItemListRouter.swift; sourceTree = "<group>"; };
 		8678D92E26F70FBB007B1578 /* IDriveKartListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDriveKartListService.swift; sourceTree = "<group>"; };
 		8678D93026F71033007B1578 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		8678D93426F71D69007B1578 /* IKartItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKartItemListViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +214,7 @@
 		866E6A8B27000E1500F8B294 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				866E6A9627004FF100F8B294 /* IkartCartItemListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 		866E6A8C27000E1B00F8B294 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				866E6A982700501800F8B294 /* IkartCartItemListInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -218,6 +230,7 @@
 		866E6A8D27000E2900F8B294 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				866E6A9A2700503F00F8B294 /* IkartCartItemListPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -232,6 +245,7 @@
 		866E6A8F27000E3B00F8B294 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				866E6A9C2700505800F8B294 /* IkartCartItemListRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -242,6 +256,14 @@
 				866E6A9127000EC200F8B294 /* Button.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		866E6A9327004EBB00F8B294 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				866E6A9427004F5700F8B294 /* IkartCartItemListContract.swift */,
+			);
+			path = Contract;
 			sourceTree = "<group>";
 		};
 		8678D92D26F70F39007B1578 /* Service */ = {
@@ -255,6 +277,7 @@
 		8678D94026F7945E007B1578 /* IKartCartItemList */ = {
 			isa = PBXGroup;
 			children = (
+				866E6A9327004EBB00F8B294 /* Contract */,
 				866E6A8B27000E1500F8B294 /* View */,
 				866E6A8C27000E1B00F8B294 /* Interactor */,
 				866E6A8D27000E2900F8B294 /* Presenter */,
@@ -487,7 +510,9 @@
 			files = (
 				8629DCE426F652450063C9B6 /* IDriveKart.xcdatamodeld in Sources */,
 				8679B31A26FF783B003322A2 /* CdItem+CoreDataProperties.swift in Sources */,
+				866E6A992700501800F8B294 /* IkartCartItemListInteractor.swift in Sources */,
 				8679B30B26FF4EE3003322A2 /* IkartItemDataRepository.swift in Sources */,
+				866E6A9727004FF100F8B294 /* IkartCartItemListViewController.swift in Sources */,
 				8678D93D26F71DDA007B1578 /* IkartItemListRouter.swift in Sources */,
 				8678D93726F71D84007B1578 /* IKartItemListInteractor.swift in Sources */,
 				8679B30826FF4DFB003322A2 /* PersistentStorage.swift in Sources */,
@@ -499,11 +524,14 @@
 				8678D93926F71DB0007B1578 /* IKartItemListPresenter.swift in Sources */,
 				8679B2F826FED529003322A2 /* IkartItemListContract.swift in Sources */,
 				8629DCDA26F652450063C9B6 /* AppDelegate.swift in Sources */,
+				866E6A9D2700505800F8B294 /* IkartCartItemListRouter.swift in Sources */,
+				866E6A9527004F5700F8B294 /* IkartCartItemListContract.swift in Sources */,
 				8629DCDC26F652450063C9B6 /* SceneDelegate.swift in Sources */,
 				866E6A9227000EC200F8B294 /* Button.swift in Sources */,
 				8678D93B26F71DC6007B1578 /* IkartItemListEntity.swift in Sources */,
 				8679B31926FF783B003322A2 /* CdItem+CoreDataClass.swift in Sources */,
 				8678D93126F71033007B1578 /* APIClient.swift in Sources */,
+				866E6A9B2700503F00F8B294 /* IkartCartItemListPresenter.swift in Sources */,
 				8678D93526F71D69007B1578 /* IKartItemListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

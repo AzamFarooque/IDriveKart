@@ -9,7 +9,7 @@ import Foundation
 
 
 class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
-   
+    
     
     private let manager: DataBaseManager = DataBaseManager()
     var presenter: InteractorToPresenterItemListProtocol?
