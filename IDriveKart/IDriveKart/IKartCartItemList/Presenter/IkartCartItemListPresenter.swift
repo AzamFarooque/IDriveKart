@@ -9,6 +9,8 @@ import Foundation
 
 
 class IkartCartItemListPresenter : ViewToPresenterCartItemListProtocol{
+   
+    
     
     var view: PresenterToViewCartItemListProtocol?
     var interactor: PresenterToInteractorCartItemListProtocol?
@@ -17,10 +19,11 @@ class IkartCartItemListPresenter : ViewToPresenterCartItemListProtocol{
     var iKartCartItemList: [IKartItem]?
     
     func viewDidLoad() {
+        view?.showHUD()
         interactor?.fetchcartList()
     }
     
-    func addTocart(item: IKartItem) -> Bool {
+    func removeItemFromCart(item: IKartItem) -> Bool {
         return ((interactor?.addTocart(item: item)) != nil)
     }
     
@@ -35,6 +38,7 @@ extension IkartCartItemListPresenter : InteractorToPresenterCartItemListProtocol
     
     func fetchCartItemList(quotes: [IKartItem]) {
         self.iKartCartItemList = quotes
+        view?.hideHUD()
         view?.onFetchCartItemListSuccess()
     }
 }

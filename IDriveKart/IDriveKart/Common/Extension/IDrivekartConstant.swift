@@ -12,6 +12,7 @@ struct IDrivekartConstant {
     
     struct Title {
         static let ItemListTitle = "Ikart"
+        static let CartListTitle = "Cart"
     }
     
 }

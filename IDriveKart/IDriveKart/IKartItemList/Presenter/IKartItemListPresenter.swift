@@ -26,6 +26,7 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     
     
     func refresh() {
+        self.iKartItemList = []
         interactor?.getItemList()
     }
     

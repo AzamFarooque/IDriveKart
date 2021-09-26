@@ -34,18 +34,23 @@ class IKartItemListViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        // registerCell()
-        presenter?.viewDidLoad()
+        view.backgroundColor = .white
         setupUI()
         registerCell()
         tableView.tableFooterView = UIView()
         self.navigationItem.title = IDrivekartConstant.Title.ItemListTitle
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        offset = 0
+        presenter?.viewDidLoad()
+    }
+    
     // MARK: - Actions
     
     @objc func refresh() {
+        offset = 0
         presenter?.refresh()
     }
 }
@@ -95,7 +100,7 @@ extension IKartItemListViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         tableView.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
-        
+        tableView.tableFooterView = UIView()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cartICon"), style: .plain, target: self, action: #selector(addTapped))
         
@@ -127,8 +132,14 @@ extension IKartItemListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        guard (presenter?.iKartItemList?.count) != 0  else {
+            return UITableViewCell()
+        }
+         
         let cell = (tableView.dequeueReusableCell(withIdentifier: IkartItemListTableViewCell.identifier, for: indexPath) as! IkartItemListTableViewCell)
+        
         let iKartItem = presenter?.iKartItemList?[indexPath.row]
+      
         if let item = iKartItem{
             cell.update(item: item)
         }

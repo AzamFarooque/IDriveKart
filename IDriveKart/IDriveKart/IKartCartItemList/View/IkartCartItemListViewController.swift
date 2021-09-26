@@ -25,7 +25,7 @@ class IkartCartItemListViewController: UIViewController {
         setupUI()
         presenter?.viewDidLoad()
         
-        self.navigationItem.title = "Cart"
+        self.navigationItem.title = IDrivekartConstant.Title.CartListTitle
     }
 }
 
@@ -33,20 +33,24 @@ extension IkartCartItemListViewController :  PresenterToViewCartItemListProtocol
     
     func onFetchCartItemListSuccess() {
         DispatchQueue.main.async {
-            //self?.presenter?.iKartCartItemList?.remove(at: indexPath.row)
-          //  self?.tableView.deleteRows(at: [indexPath], with: .fade)
             self.tableView.reloadData()
         }
     }
     
     func showHUD() {
-        
+        DispatchQueue.main.async {
+            self.tableView.showLoader()
+        }
     }
     
     func hideHUD() {
-        
+        DispatchQueue.main.async {
+            self.tableView.dismissloader()
+        }
     }
 }
+
+// MARK: - Tableview delegate and datasource
 
 extension IkartCartItemListViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -74,9 +78,10 @@ extension IkartCartItemListViewController: UITableViewDelegate, UITableViewDataS
         
         cell.addToCartBtn.didTouchUpInside = { [weak self , iKartItem] _ in
             self?.presenter?.iKartCartItemList?[indexPath.row].inCart = false
-            if ((self?.presenter?.addTocart(item: iKartItem!)) != nil) {
-                
-                
+            if ((self?.presenter?.removeItemFromCart(item: iKartItem!)) != nil) {
+                self?.presenter?.iKartCartItemList?.remove(at: indexPath.row)
+                self?.tableView.deleteRows(at: [indexPath], with: .fade)
+                self?.tableView.reloadData()
             }
         }
         return cell
@@ -93,11 +98,7 @@ extension IkartCartItemListViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         tableView.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
-        
-    }
-    
-    @objc func addTapped(){
-        
+        tableView.tableFooterView = UIView()
     }
     
     func registerCell(){

@@ -27,7 +27,7 @@ protocol ViewToPresenterCartItemListProtocol: AnyObject {
     
     func viewDidLoad()
     
-    func addTocart(item : IKartItem) -> Bool
+    func removeItemFromCart(item : IKartItem) -> Bool
     
     var iKartCartItemList: [IKartItem]? { get set }
     
