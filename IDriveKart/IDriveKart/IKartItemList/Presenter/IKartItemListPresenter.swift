@@ -11,19 +11,19 @@ import UIKit
 
 class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     
+    // MARK: Properties
     
     var view: PresenterToViewItemListProtocol?
     var interactor: PresenterToInteractorItemListProtocol?
     var router: PresenterToRouterItemListProtocol?
-    
     var iKartItemList: [IKartItem]?
     var iKartCartItemList: [IKartItem]?
     
+    // MARK: Inputs from view
     
     func pushToCartList() {
         router?.pushToCartList(on: view!)
     }
-    
     
     func refresh() {
         self.iKartItemList = []
@@ -51,6 +51,7 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     
 }
 
+// MARK: - Outputs to view
 
 extension IKartItemListPresenter : InteractorToPresenterItemListProtocol  {
     

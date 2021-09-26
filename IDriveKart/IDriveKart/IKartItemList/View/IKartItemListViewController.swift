@@ -131,25 +131,13 @@ extension IKartItemListViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard (presenter?.iKartItemList?.count) != 0  else {
-            return UITableViewCell()
-        }
-         
+            return UITableViewCell()}
         let cell = (tableView.dequeueReusableCell(withIdentifier: IkartItemListTableViewCell.identifier, for: indexPath) as! IkartItemListTableViewCell)
-        
         let iKartItem = presenter?.iKartItemList?[indexPath.row]
-      
         if let item = iKartItem{
             cell.update(item: item)
         }
-        
-        if iKartItem?.inCart ?? false{
-            cell.addToCartBtn.setImage(#imageLiteral(resourceName: "addIntoCartIcon"), for: .normal)
-        }else{
-            cell.addToCartBtn.setImage(#imageLiteral(resourceName: "removeFromCartIcon"), for: .normal)
-        }
-        
         cell.addToCartBtn.didTouchUpInside = { [weak self , iKartItem] _ in
             if ((self?.presenter?.addTocart(item: iKartItem!)) != nil) {
                 let bool = self?.presenter?.iKartItemList?[indexPath.row].inCart

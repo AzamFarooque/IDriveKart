@@ -10,11 +10,13 @@ import Foundation
 
 class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
     
+    // MARK: Properties
     
     private let manager: DataBaseManager = DataBaseManager()
     var presenter: InteractorToPresenterItemListProtocol?
-    
     var quotes: [IKartItem]?
+    
+    // MARK: Fetch from server then save and retrive from database
     
     func getItemList() {
         let urlString = URL(string : APIManager.shared.baseURL)
@@ -29,13 +31,19 @@ class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
         }
     }
     
+    // MARK: Pagination
+    
     func loadNextPage(offset : Int) {
         self.presenter?.fetchQuotesSuccess(quotes: self.manager.fetchItemList(offset: offset) ?? [])
     }
     
+    // MARK: Add to cart
+    
     func addTocart(item: IKartItem) ->Bool {
-        return self.manager.updateEmployee(employee: item)
+        return self.manager.updateCartValue(employee: item)
     }
+    
+    // MARK: Fetch cart list
     
     func fetchcartList() {
         self.presenter?.fetchCartItemList(quotes: self.manager.fetchCartItemList()!)

@@ -24,7 +24,7 @@ class IkartCartItemListPresenter : ViewToPresenterCartItemListProtocol{
     }
     
     func removeItemFromCart(item: IKartItem) -> Bool {
-        return ((interactor?.addTocart(item: item)) != nil)
+        return ((interactor?.removeItemFromcart(item: item)) != nil)
     }
     
     func numberOfRowsInSection() -> Int {

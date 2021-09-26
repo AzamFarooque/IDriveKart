@@ -10,6 +10,8 @@ import UIKit
 
 let imageCache = NSCache<AnyObject, AnyObject>()
 
+// MARK: Image loader 
+
 class LazyImageView: UIImageView {
 
     var imageURL: URL?

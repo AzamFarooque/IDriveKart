@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: Item list entity
 
 struct IKartItem : Decodable {
     var id : String?

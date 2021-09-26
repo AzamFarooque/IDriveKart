@@ -9,8 +9,9 @@ import UIKit
 
 class IkartCartItemListViewController: UIViewController {
     
-    var presenter : ViewToPresenterCartItemListProtocol?
+    //MARK:- Properties
     
+    var presenter : ViewToPresenterCartItemListProtocol?
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = 70
@@ -18,6 +19,8 @@ class IkartCartItemListViewController: UIViewController {
         tableView.delegate = self
         return tableView
     }()
+    
+    //MARK:- ViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,15 +72,8 @@ extension IkartCartItemListViewController: UITableViewDelegate, UITableViewDataS
         if let item = iKartItem{
             cell.update(item: item)
         }
-        
-        if iKartItem?.inCart ?? false{
-            cell.addToCartBtn.setImage(#imageLiteral(resourceName: "addIntoCartIcon"), for: .normal)
-        }else{
-            cell.addToCartBtn.setImage(#imageLiteral(resourceName: "removeFromCartIcon"), for: .normal)
-        }
-        
+    
         cell.addToCartBtn.didTouchUpInside = { [weak self , iKartItem] _ in
-            self?.presenter?.iKartCartItemList?[indexPath.row].inCart = false
             if ((self?.presenter?.removeItemFromCart(item: iKartItem!)) != nil) {
                 self?.presenter?.iKartCartItemList?.remove(at: indexPath.row)
                 self?.tableView.deleteRows(at: [indexPath], with: .fade)
@@ -88,6 +84,7 @@ extension IkartCartItemListViewController: UITableViewDelegate, UITableViewDataS
     }
 }
 
+// MARK: - UI setup and register cell
 
 extension IkartCartItemListViewController {
     func setupUI() {

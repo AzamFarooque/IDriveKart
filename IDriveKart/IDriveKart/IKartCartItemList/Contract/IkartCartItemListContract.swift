@@ -44,7 +44,7 @@ protocol PresenterToInteractorCartItemListProtocol: AnyObject {
     
     func fetchcartList()
     
-    func addTocart(item : IKartItem) -> Bool
+    func removeItemFromcart(item : IKartItem) -> Bool
 }
 
 

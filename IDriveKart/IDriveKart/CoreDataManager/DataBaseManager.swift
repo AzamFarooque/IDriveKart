@@ -24,17 +24,7 @@ struct DataBaseManager{
         return _itemDataRepository.fetchCartItemList()
     }
     
-    func fetchEmployee(byIdentifier id: String) -> IKartItem?{
-        
-        return _itemDataRepository.get(byIdentifier: id)
-    }
-    
-    func updateEmployee(employee: IKartItem) -> Bool {
+    func updateCartValue(employee: IKartItem) -> Bool {
         return _itemDataRepository.update(item: employee)
     }
-    
-    //
-    //    func deleteEmployee(id: UUID) -> Bool {
-    //        return _employeeDataRepository.delete(id: id)
-    //    }
 }

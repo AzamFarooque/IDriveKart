@@ -238,13 +238,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		866E6A8E27000E3100F8B294 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
 		866E6A8F27000E3B00F8B294 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,7 +297,6 @@
 				866E6A8B27000E1500F8B294 /* View */,
 				866E6A8C27000E1B00F8B294 /* Interactor */,
 				866E6A8D27000E2900F8B294 /* Presenter */,
-				866E6A8E27000E3100F8B294 /* Entity */,
 				866E6A8F27000E3B00F8B294 /* Router */,
 			);
 			path = IKartCartItemList;

@@ -27,6 +27,12 @@ class IkartItemListTableViewCell: UITableViewCell {
         itemDescription.text = item.description ?? ""
         let imgUrl = URL(string: item.image ?? "")
         itemImgView.loadImageWithUrl(imgUrl!)
+        
+        if item.inCart ?? false{
+            addToCartBtn.setImage(#imageLiteral(resourceName: "addIntoCartIcon"), for: .normal)
+        }else{
+            addToCartBtn.setImage(#imageLiteral(resourceName: "removeFromCartIcon"), for: .normal)
+        }
     }
     
     override func prepareForReuse() {
