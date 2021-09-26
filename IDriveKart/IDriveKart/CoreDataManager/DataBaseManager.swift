@@ -20,6 +20,10 @@ struct DataBaseManager{
         return _itemDataRepository.fetchItemList(offset : offset)
     }
     
+    func fetchCartItemList() -> [IKartItem]? {
+        return _itemDataRepository.fetchCartItemList()
+    }
+    
     func fetchEmployee(byIdentifier id: String) -> IKartItem?{
         
         return _itemDataRepository.get(byIdentifier: id)

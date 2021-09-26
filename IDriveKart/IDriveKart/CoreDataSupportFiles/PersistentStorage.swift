@@ -42,14 +42,25 @@ final class PersistentStorage{
         }
     }
     
-    func fetchManagedObject<T: NSManagedObject>(managedObject: T.Type , offset : Int) -> [T]?
-    {
+    func fetchManagedObject<T: NSManagedObject>(managedObject: T.Type , offset : Int) -> [T]?{
         do {
             let request = managedObject.fetchRequest()
             request.fetchLimit = 10
             request.fetchOffset = offset
             guard let result = try PersistentStorage.shared.context.fetch(request) as? [T] else {return nil}
             
+            return result
+            
+        } catch let error {
+            debugPrint(error)
+        }
+        
+        return nil
+    }
+    
+    func fetchCartManagedObject<T: NSManagedObject>(managedObject: T.Type) -> [T]?{
+        do {
+            guard let result = try PersistentStorage.shared.context.fetch(managedObject.fetchRequest()) as? [T] else {return nil}
             return result
             
         } catch let error {

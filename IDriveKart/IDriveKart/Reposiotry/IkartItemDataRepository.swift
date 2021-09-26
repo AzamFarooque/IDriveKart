@@ -48,6 +48,21 @@ struct IkartItemDataRepository : IKarttemRepository{
         return employees
     }
     
+    func fetchCartItemList() -> [IKartItem]? {
+        
+        let result = PersistentStorage.shared.fetchCartManagedObject(managedObject: CdItem.self)
+        
+        var employees : [IKartItem] = []
+        
+        result?.forEach({ (Item) in
+            if Item.itemInCart{
+                employees.append(Item.convertToEmployee())
+            }
+        })
+        
+        return employees
+    }
+    
     
     
     func update(item : IKartItem) -> Bool {

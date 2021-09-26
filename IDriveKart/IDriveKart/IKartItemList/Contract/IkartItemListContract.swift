@@ -15,6 +15,8 @@ protocol PresenterToViewItemListProtocol: AnyObject {
     func onFetchQuotesSuccess()
     func onFetchQuotesFailure(error: String)
     
+    func onFetchCartItemListSuccess()
+    
     func showHUD()
     func hideHUD()
     
@@ -39,6 +41,8 @@ protocol ViewToPresenterItemListProtocol: AnyObject {
     
     func addTocart(item : IKartItem) -> Bool
     
+    var iKartCartItemList: [IKartItem]? { get set }
+    
     func numberOfRowsInSection() -> Int
     
     func didSelectRowAt(index: Int)
@@ -57,6 +61,8 @@ protocol PresenterToInteractorItemListProtocol: AnyObject {
     func loadNextPage(offset : Int)
     
     func addTocart(item : IKartItem) -> Bool
+    
+    func fetchcartList()
   
 }
 
@@ -66,6 +72,7 @@ protocol InteractorToPresenterItemListProtocol: AnyObject {
     
     func fetchQuotesSuccess(quotes: [IKartItem])
     func fetchQuotesFailure(errorCode: Int)
+    func fetchCartItemList(quotes: [IKartItem])
     
    
 }

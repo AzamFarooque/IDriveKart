@@ -22,6 +22,10 @@ class IKartItemListViewController : UIViewController , PresenterToViewItemListPr
         
     }
     
+    func onFetchCartItemListSuccess(){
+        print(presenter?.iKartCartItemList?.count ?? 0)
+    }
+    
     func showHUD() {
         
     }
@@ -87,10 +91,8 @@ extension IKartItemListViewController {
         tableView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         tableView.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
         
-        self.navigationItem.title = "Simpsons Quotes"
-        
-        self.navigationItem.title = "Simpsons Quotes"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cart", style: .plain, target: self, action: #selector(addTapped))
+       
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cartICon"), style: .plain, target: self, action: #selector(addTapped))
         
         
     }

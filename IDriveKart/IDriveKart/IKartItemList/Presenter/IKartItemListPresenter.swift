@@ -17,6 +17,7 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     var router: PresenterToRouterItemListProtocol?
     
     var iKartItemList: [IKartItem]?
+    var iKartCartItemList: [IKartItem]?
     
     
     
@@ -53,6 +54,7 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     func viewDidLoad() {
         self.iKartItemList = []
         view?.showHUD()
+        interactor?.fetchcartList()
         interactor?.loadQuotes()
     }
     
@@ -69,5 +71,10 @@ extension IKartItemListPresenter : InteractorToPresenterItemListProtocol  {
     
     func fetchQuotesFailure(errorCode: Int) {
         
+    }
+    
+    func fetchCartItemList(quotes: [IKartItem]) {
+        self.iKartCartItemList = quotes
+        view?.onFetchCartItemListSuccess()
     }
 }

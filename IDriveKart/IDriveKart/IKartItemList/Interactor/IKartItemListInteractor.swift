@@ -36,4 +36,8 @@ class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
     func addTocart(item: IKartItem) ->Bool {
         return self.manager.updateEmployee(employee: item)
     }
+    
+    func fetchcartList() {
+        self.presenter?.fetchCartItemList(quotes: self.manager.fetchCartItemList()!)
+    }
 }
