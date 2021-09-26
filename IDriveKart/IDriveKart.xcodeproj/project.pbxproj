@@ -22,7 +22,8 @@
 		866E6A9B2700503F00F8B294 /* IkartCartItemListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A9A2700503F00F8B294 /* IkartCartItemListPresenter.swift */; };
 		866E6A9D2700505800F8B294 /* IkartCartItemListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A9C2700505800F8B294 /* IkartCartItemListRouter.swift */; };
 		866E6AA027006B5400F8B294 /* MockIKartItemAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A9F27006B5400F8B294 /* MockIKartItemAPIClient.swift */; };
-		8678D92F26F70FBB007B1578 /* IDriveKartListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D92E26F70FBB007B1578 /* IDriveKartListService.swift */; };
+		866E6AA22700A07400F8B294 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6AA12700A07400F8B294 /* View.swift */; };
+		866E6AA42700A14000F8B294 /* IDrivekartConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6AA32700A14000F8B294 /* IDrivekartConstant.swift */; };
 		8678D93126F71033007B1578 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93026F71033007B1578 /* APIClient.swift */; };
 		8678D93526F71D69007B1578 /* IKartItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93426F71D69007B1578 /* IKartItemListViewController.swift */; };
 		8678D93726F71D84007B1578 /* IKartItemListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93626F71D84007B1578 /* IKartItemListInteractor.swift */; };
@@ -79,7 +80,8 @@
 		866E6A9A2700503F00F8B294 /* IkartCartItemListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartCartItemListPresenter.swift; sourceTree = "<group>"; };
 		866E6A9C2700505800F8B294 /* IkartCartItemListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartCartItemListRouter.swift; sourceTree = "<group>"; };
 		866E6A9F27006B5400F8B294 /* MockIKartItemAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockIKartItemAPIClient.swift; sourceTree = "<group>"; };
-		8678D92E26F70FBB007B1578 /* IDriveKartListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDriveKartListService.swift; sourceTree = "<group>"; };
+		866E6AA12700A07400F8B294 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		866E6AA32700A14000F8B294 /* IDrivekartConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDrivekartConstant.swift; sourceTree = "<group>"; };
 		8678D93026F71033007B1578 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		8678D93426F71D69007B1578 /* IKartItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKartItemListViewController.swift; sourceTree = "<group>"; };
 		8678D93626F71D84007B1578 /* IKartItemListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKartItemListInteractor.swift; sourceTree = "<group>"; };
@@ -152,7 +154,6 @@
 				8679B30926FF4EC8003322A2 /* Reposiotry */,
 				8679B31C26FF9C85003322A2 /* CoreDataManager */,
 				8629DD0C26F652570063C9B6 /* APIManager */,
-				8678D92D26F70F39007B1578 /* Service */,
 				8629DD1026F652E30063C9B6 /* IKartItemList */,
 				8678D94026F7945E007B1578 /* IKartCartItemList */,
 				8629DCE526F652470063C9B6 /* Assets.xcassets */,
@@ -203,7 +204,6 @@
 		8629DD1026F652E30063C9B6 /* IKartItemList */ = {
 			isa = PBXGroup;
 			children = (
-				8679B30226FF1DF7003322A2 /* TableCell */,
 				8679B2F626FED510003322A2 /* Contract */,
 				8679B2F126FECF0C003322A2 /* View */,
 				8679B2F226FECF17003322A2 /* Interactor */,
@@ -256,7 +256,8 @@
 		866E6A9027000E9B00F8B294 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				866E6A9127000EC200F8B294 /* Button.swift */,
+				866E6AA52700A52700F8B294 /* Extension */,
+				866E6AA62700A53F00F8B294 /* Cell */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -277,12 +278,23 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		8678D92D26F70F39007B1578 /* Service */ = {
+		866E6AA52700A52700F8B294 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				8678D92E26F70FBB007B1578 /* IDriveKartListService.swift */,
+				866E6A9127000EC200F8B294 /* Button.swift */,
+				866E6AA12700A07400F8B294 /* View.swift */,
+				866E6AA32700A14000F8B294 /* IDrivekartConstant.swift */,
 			);
-			path = Service;
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		866E6AA62700A53F00F8B294 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8679B30326FF1E18003322A2 /* IkartItemListTableViewCell.swift */,
+				8679B30426FF1E18003322A2 /* IkartItemListTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8678D94026F7945E007B1578 /* IKartCartItemList */ = {
@@ -344,15 +356,6 @@
 				8679B2F726FED529003322A2 /* IkartItemListContract.swift */,
 			);
 			path = Contract;
-			sourceTree = "<group>";
-		};
-		8679B30226FF1DF7003322A2 /* TableCell */ = {
-			isa = PBXGroup;
-			children = (
-				8679B30326FF1E18003322A2 /* IkartItemListTableViewCell.swift */,
-				8679B30426FF1E18003322A2 /* IkartItemListTableViewCell.xib */,
-			);
-			path = TableCell;
 			sourceTree = "<group>";
 		};
 		8679B30926FF4EC8003322A2 /* Reposiotry */ = {
@@ -519,6 +522,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				866E6AA22700A07400F8B294 /* View.swift in Sources */,
+				866E6AA42700A14000F8B294 /* IDrivekartConstant.swift in Sources */,
 				8629DCE426F652450063C9B6 /* IDriveKart.xcdatamodeld in Sources */,
 				8679B31A26FF783B003322A2 /* CdItem+CoreDataProperties.swift in Sources */,
 				866E6A992700501800F8B294 /* IkartCartItemListInteractor.swift in Sources */,
@@ -528,7 +533,6 @@
 				8678D93726F71D84007B1578 /* IKartItemListInteractor.swift in Sources */,
 				8679B30826FF4DFB003322A2 /* PersistentStorage.swift in Sources */,
 				8679B30126FEFEC0003322A2 /* LazyImageView.swift in Sources */,
-				8678D92F26F70FBB007B1578 /* IDriveKartListService.swift in Sources */,
 				8679B31626FF75D5003322A2 /* DataBaseManager.swift in Sources */,
 				8629DD0F26F652890063C9B6 /* APIManager.swift in Sources */,
 				8679B30526FF1E18003322A2 /* IkartItemListTableViewCell.swift in Sources */,

@@ -9,7 +9,49 @@ import Foundation
 import UIKit
 
 
-class IKartItemListViewController : UIViewController , PresenterToViewItemListProtocol{
+class IKartItemListViewController : UIViewController {
+    
+    //MARK:- Properties
+    
+    var presenter : ViewToPresenterItemListProtocol?
+    let pagingSpinner = UIActivityIndicatorView()
+    var offset : Int = 0
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshControl
+    }()
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.rowHeight = 70
+        tableView.dataSource = self
+        tableView.delegate = self
+        return tableView
+    }()
+    
+    //MARK:- ViewController Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .red
+        // registerCell()
+        presenter?.viewDidLoad()
+        setupUI()
+        registerCell()
+        tableView.tableFooterView = UIView()
+        self.navigationItem.title = IDrivekartConstant.Title.ItemListTitle
+    }
+    
+    // MARK: - Actions
+    
+    @objc func refresh() {
+        presenter?.refresh()
+    }
+}
+
+
+extension IKartItemListViewController : PresenterToViewItemListProtocol{
     
     func onFetchQuotesSuccess() {
         DispatchQueue.main.async {
@@ -27,58 +69,21 @@ class IKartItemListViewController : UIViewController , PresenterToViewItemListPr
     }
     
     func showHUD() {
-        
+        DispatchQueue.main.async {
+            self.tableView.showLoader()
+        }
     }
     
     func hideHUD() {
-        
-    }
-    
-    func deselectRowAt(row: Int) {
-        
-    }
-    
-    var presenter : ViewToPresenterItemListProtocol?
-    let pagingSpinner = UIActivityIndicatorView(style: .gray)
-    var offset : Int = 0
-    lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        return refreshControl
-    }()
-    
-    // MARK: - Actions
-    @objc func refresh() {
-        presenter?.refresh()
-    }
-    
-    
-    var cellId = "IkartItemListCollectionViewCell"
-    
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.rowHeight = 70
-        tableView.dataSource = self
-        tableView.delegate = self
-        return tableView
-    }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
-        // registerCell()
-        presenter?.viewDidLoad()
-        setupUI()
-        registerCell()
-        
-        self.navigationItem.title = "IKart"
-        
+        DispatchQueue.main.async {
+            self.tableView.dismissloader()
+        }
     }
 }
 
 
-// MARK: - UI Setup
+
+// MARK: - UI setup and register cell
 
 extension IKartItemListViewController {
     func setupUI() {
@@ -91,7 +96,7 @@ extension IKartItemListViewController {
         tableView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         tableView.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
         
-       
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cartICon"), style: .plain, target: self, action: #selector(addTapped))
         
         
@@ -108,14 +113,7 @@ extension IKartItemListViewController {
     }
 }
 
-
-extension UIView {
-    
-    static var identifier: String {
-        return String(describing: self)
-    }
-}
-
+// MARK: - Tableview delegates and datasources
 
 extension IKartItemListViewController: UITableViewDelegate, UITableViewDataSource {
     

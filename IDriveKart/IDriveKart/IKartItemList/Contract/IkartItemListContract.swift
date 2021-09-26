@@ -19,8 +19,7 @@ protocol PresenterToViewItemListProtocol: AnyObject {
     
     func showHUD()
     func hideHUD()
-    
-    func deselectRowAt(row: Int)
+
 }
 
 
@@ -44,10 +43,7 @@ protocol ViewToPresenterItemListProtocol: AnyObject {
     var iKartCartItemList: [IKartItem]? { get set }
     
     func numberOfRowsInSection() -> Int
-    
-    func didSelectRowAt(index: Int)
-    func deselectRowAt(index: Int)
-    
+  
     func pushToCartList()
     
 }
@@ -58,7 +54,7 @@ protocol PresenterToInteractorItemListProtocol: AnyObject {
     
     var presenter: InteractorToPresenterItemListProtocol? { get set }
     
-    func loadQuotes()
+    func getItemList()
     
     func loadNextPage(offset : Int)
     

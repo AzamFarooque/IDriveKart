@@ -16,7 +16,7 @@ class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
     
     var quotes: [IKartItem]?
     
-    func loadQuotes() {
+    func getItemList() {
         let urlString = URL(string : APIManager.shared.baseURL)
         APIClient.shared.getAPiData(requestURL: urlString!, resultType: IKartItem.self) { [weak self] (data, error) in
             if error == nil {

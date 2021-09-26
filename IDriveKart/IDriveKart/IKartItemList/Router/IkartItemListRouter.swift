@@ -10,9 +10,8 @@ import UIKit
 
 class IKartItemListRouter : PresenterToRouterItemListProtocol{
     
-    
-    
     // MARK: Static methods
+    
     static func createModule() -> UINavigationController {
         
         print("QuotesRouter creates the Quotes module.")

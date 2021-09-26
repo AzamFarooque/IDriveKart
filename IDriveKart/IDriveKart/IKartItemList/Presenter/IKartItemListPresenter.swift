@@ -26,7 +26,7 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     
     
     func refresh() {
-        interactor?.loadQuotes()
+        interactor?.getItemList()
     }
     
     func numberOfRowsInSection() -> Int {
@@ -41,24 +41,11 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
         return ((interactor?.addTocart(item: item)) != nil)
     }
     
-    
-    func didSelectRowAt(index: Int) {
-        
-    }
-    
-    func deselectRowAt(index: Int) {
-        
-    }
-    
-    func interactorDidFetchIKartItemList(with Result: Result<[IKartItem], Error>) {
-        
-    }
-    
     func viewDidLoad() {
         self.iKartItemList = []
         view?.showHUD()
         interactor?.fetchcartList()
-        interactor?.loadQuotes()
+        interactor?.getItemList()
     }
     
 }
