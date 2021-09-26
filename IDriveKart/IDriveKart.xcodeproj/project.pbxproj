@@ -21,6 +21,7 @@
 		866E6A992700501800F8B294 /* IkartCartItemListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A982700501800F8B294 /* IkartCartItemListInteractor.swift */; };
 		866E6A9B2700503F00F8B294 /* IkartCartItemListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A9A2700503F00F8B294 /* IkartCartItemListPresenter.swift */; };
 		866E6A9D2700505800F8B294 /* IkartCartItemListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A9C2700505800F8B294 /* IkartCartItemListRouter.swift */; };
+		866E6AA027006B5400F8B294 /* MockIKartItemAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866E6A9F27006B5400F8B294 /* MockIKartItemAPIClient.swift */; };
 		8678D92F26F70FBB007B1578 /* IDriveKartListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D92E26F70FBB007B1578 /* IDriveKartListService.swift */; };
 		8678D93126F71033007B1578 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93026F71033007B1578 /* APIClient.swift */; };
 		8678D93526F71D69007B1578 /* IKartItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678D93426F71D69007B1578 /* IKartItemListViewController.swift */; };
@@ -77,6 +78,7 @@
 		866E6A982700501800F8B294 /* IkartCartItemListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartCartItemListInteractor.swift; sourceTree = "<group>"; };
 		866E6A9A2700503F00F8B294 /* IkartCartItemListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartCartItemListPresenter.swift; sourceTree = "<group>"; };
 		866E6A9C2700505800F8B294 /* IkartCartItemListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkartCartItemListRouter.swift; sourceTree = "<group>"; };
+		866E6A9F27006B5400F8B294 /* MockIKartItemAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockIKartItemAPIClient.swift; sourceTree = "<group>"; };
 		8678D92E26F70FBB007B1578 /* IDriveKartListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDriveKartListService.swift; sourceTree = "<group>"; };
 		8678D93026F71033007B1578 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		8678D93426F71D69007B1578 /* IKartItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKartItemListViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +147,7 @@
 			children = (
 				866E6A9027000E9B00F8B294 /* Common */,
 				8629DD0D26F652610063C9B6 /* AppDelegate */,
-				8679B31B26FF9C65003322A2 /* Image */,
+				8679B31B26FF9C65003322A2 /* ImageManager */,
 				8679B30C26FF4FAF003322A2 /* CoreDataSupportFiles */,
 				8679B30926FF4EC8003322A2 /* Reposiotry */,
 				8679B31C26FF9C85003322A2 /* CoreDataManager */,
@@ -164,6 +166,7 @@
 		8629DCF226F652470063C9B6 /* IDriveKartTests */ = {
 			isa = PBXGroup;
 			children = (
+				866E6A9E27006B2000F8B294 /* Mock */,
 				8629DCF326F652470063C9B6 /* IDriveKartTests.swift */,
 				8629DCF526F652470063C9B6 /* Info.plist */,
 			);
@@ -266,6 +269,14 @@
 			path = Contract;
 			sourceTree = "<group>";
 		};
+		866E6A9E27006B2000F8B294 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				866E6A9F27006B5400F8B294 /* MockIKartItemAPIClient.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		8678D92D26F70F39007B1578 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,12 +373,12 @@
 			path = CoreDataSupportFiles;
 			sourceTree = "<group>";
 		};
-		8679B31B26FF9C65003322A2 /* Image */ = {
+		8679B31B26FF9C65003322A2 /* ImageManager */ = {
 			isa = PBXGroup;
 			children = (
 				8679B30026FEFEC0003322A2 /* LazyImageView.swift */,
 			);
-			path = Image;
+			path = ImageManager;
 			sourceTree = "<group>";
 		};
 		8679B31C26FF9C85003322A2 /* CoreDataManager */ = {
@@ -541,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8629DCF426F652470063C9B6 /* IDriveKartTests.swift in Sources */,
+				866E6AA027006B5400F8B294 /* MockIKartItemAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

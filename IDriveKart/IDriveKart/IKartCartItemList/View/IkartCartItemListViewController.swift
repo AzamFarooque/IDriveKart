@@ -33,6 +33,8 @@ extension IkartCartItemListViewController :  PresenterToViewCartItemListProtocol
     
     func onFetchCartItemListSuccess() {
         DispatchQueue.main.async {
+            //self?.presenter?.iKartCartItemList?.remove(at: indexPath.row)
+          //  self?.tableView.deleteRows(at: [indexPath], with: .fade)
             self.tableView.reloadData()
         }
     }
@@ -70,13 +72,13 @@ extension IkartCartItemListViewController: UITableViewDelegate, UITableViewDataS
             cell.addToCartBtn.setImage(#imageLiteral(resourceName: "removeFromCartIcon"), for: .normal)
         }
         
-        //        cell.addToCartBtn.didTouchUpInside = { [weak self , iKartItem] _ in
-        //            if ((self?.presenter?.addTocart(item: iKartItem!)) != nil) {
-        //                let bool = self?.presenter?.iKartItemList?[indexPath.row].inCart
-        //                self?.presenter?.iKartItemList?[indexPath.row].inCart = !(bool ?? false)
-        //                self?.tableView.reloadRows(at: [indexPath], with: .fade)
-        //            }
-        //        }
+        cell.addToCartBtn.didTouchUpInside = { [weak self , iKartItem] _ in
+            self?.presenter?.iKartCartItemList?[indexPath.row].inCart = false
+            if ((self?.presenter?.addTocart(item: iKartItem!)) != nil) {
+                
+                
+            }
+        }
         return cell
     }
 }

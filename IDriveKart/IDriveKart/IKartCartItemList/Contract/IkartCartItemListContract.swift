@@ -43,6 +43,8 @@ protocol PresenterToInteractorCartItemListProtocol: AnyObject {
     var presenter: InteractorToPresenterCartItemListProtocol? { get set }
     
     func fetchcartList()
+    
+    func addTocart(item : IKartItem) -> Bool
 }
 
 
