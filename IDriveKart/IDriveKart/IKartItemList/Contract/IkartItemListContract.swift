@@ -29,13 +29,15 @@ protocol ViewToPresenterItemListProtocol: AnyObject {
     var interactor: PresenterToInteractorItemListProtocol? { get set }
     var router: PresenterToRouterItemListProtocol? { get set }
     
-    var quotesStrings: [IKartItem]? { get set }
+     var iKartItemList: [IKartItem]? { get set }
     
     func viewDidLoad()
     
     func refresh()
     
     func loadNextPage(offset : Int)
+    
+    func addTocart(item : IKartItem) -> Bool
     
     func numberOfRowsInSection() -> Int
     
@@ -53,6 +55,8 @@ protocol PresenterToInteractorItemListProtocol: AnyObject {
     func loadQuotes()
     
     func loadNextPage(offset : Int)
+    
+    func addTocart(item : IKartItem) -> Bool
   
 }
 

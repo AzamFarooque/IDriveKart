@@ -9,6 +9,8 @@ import Foundation
 
 
 class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
+   
+    
     private let manager: DataBaseManager = DataBaseManager()
     var presenter: InteractorToPresenterItemListProtocol?
     
@@ -29,5 +31,9 @@ class IKartItemListInteractor : PresenterToInteractorItemListProtocol{
     
     func loadNextPage(offset : Int) {
         self.presenter?.fetchQuotesSuccess(quotes: self.manager.fetchItemList(offset: offset) ?? [])
+    }
+    
+    func addTocart(item: IKartItem) ->Bool {
+        return self.manager.updateEmployee(employee: item)
     }
 }

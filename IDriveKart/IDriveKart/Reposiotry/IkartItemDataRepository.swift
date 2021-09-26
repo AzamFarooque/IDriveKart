@@ -12,7 +12,7 @@ import CoreData
 protocol IKarttemRepository {
     func saveItemLList(itemList : [IKartItem])
     func fetchItemList(offset : Int) -> [IKartItem]?
-    func update(item: IKartItem)
+    func update(item: IKartItem) -> Bool
     func get(byIdentifier id: String) -> IKartItem?
     
 }
@@ -50,9 +50,15 @@ struct IkartItemDataRepository : IKarttemRepository{
     
     
     
-    func update(item : IKartItem) {
-        // update code here
+    func update(item : IKartItem) -> Bool {
+        let cdEmployee = getCDEmployee(byIdentifier: item.id!)
+        guard cdEmployee != nil else {return false}
+        cdEmployee?.itemInCart = !item.inCart! 
+        
+        PersistentStorage.shared.saveContext()
+        return true
     }
+    
     
     func get(byIdentifier id: String) -> IKartItem? {
         let result = getCDEmployee(byIdentifier: id)

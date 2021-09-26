@@ -20,14 +20,15 @@ struct DataBaseManager{
         return _itemDataRepository.fetchItemList(offset : offset)
     }
     
-    //    func fetchEmployee(byIdentifier id: UUID) -> Employee?
-    //    {
-    //        return _employeeDataRepository.get(byIdentifier: id)
-    //    }
-    //
-    //    func updateEmployee(employee: Employee) -> Bool {
-    //        return _employeeDataRepository.update(employee: employee)
-    //    }
+    func fetchEmployee(byIdentifier id: String) -> IKartItem?{
+        
+        return _itemDataRepository.get(byIdentifier: id)
+    }
+    
+    func updateEmployee(employee: IKartItem) -> Bool {
+        return _itemDataRepository.update(item: employee)
+    }
+    
     //
     //    func deleteEmployee(id: UUID) -> Bool {
     //        return _employeeDataRepository.delete(id: id)

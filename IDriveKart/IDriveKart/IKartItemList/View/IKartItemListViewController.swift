@@ -126,25 +126,35 @@ extension IKartItemListViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         let cell = (tableView.dequeueReusableCell(withIdentifier: IkartItemListTableViewCell.identifier, for: indexPath) as! IkartItemListTableViewCell)
+        let iKartItem = presenter?.iKartItemList?[indexPath.row]
+        if let item = iKartItem{
+            cell.update(item: item)
+        }
         
-        cell.itemName.text = "\(presenter?.quotesStrings?[indexPath.row].name ?? "")"
-        cell.itemPrice.text = "₹ : \(presenter?.quotesStrings?[indexPath.row].price ?? "")"
-        cell.itemDescription.text = presenter?.quotesStrings?[indexPath.row].description ?? ""
+        if iKartItem?.inCart ?? false{
+            cell.addToCartBtn.setImage(#imageLiteral(resourceName: "addIntoCartIcon"), for: .normal)
+        }else{
+            cell.addToCartBtn.setImage(#imageLiteral(resourceName: "removeFromCartIcon"), for: .normal)
+        }
         
-        let imgUrl = URL(string: self.presenter?.quotesStrings?[indexPath.row].image ?? "")
-        cell.itemImgView.loadImageWithUrl(imgUrl!)
-        
+        cell.addToCartBtn.didTouchUpInside = { [weak self , iKartItem] _ in
+            if ((self?.presenter?.addTocart(item: iKartItem!)) != nil) {
+                let bool = self?.presenter?.iKartItemList?[indexPath.row].inCart
+                self?.presenter?.iKartItemList?[indexPath.row].inCart = !(bool ?? false)
+                self?.tableView.reloadRows(at: [indexPath], with: .fade)
+            }
+        }
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == (presenter?.numberOfRowsInSection())! - 1 && (presenter?.numberOfRowsInSection())! < 77{
-        offset += 10
-        presenter?.loadNextPage(offset: offset)
-        self.setTableFooter()
+            offset += 10
+            presenter?.loadNextPage(offset: offset)
+            self.setTableFooter()
         }
     }
     

@@ -16,7 +16,7 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     var interactor: PresenterToInteractorItemListProtocol?
     var router: PresenterToRouterItemListProtocol?
     
-    var quotesStrings: [IKartItem]?
+    var iKartItemList: [IKartItem]?
     
     
     
@@ -26,11 +26,15 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     }
     
     func numberOfRowsInSection() -> Int {
-        return quotesStrings?.count ?? 0
+        return iKartItemList?.count ?? 0
     }
     
     func loadNextPage(offset: Int) {
         interactor?.loadNextPage(offset: offset)
+    }
+    
+    func addTocart(item: IKartItem) ->Bool {
+        return ((interactor?.addTocart(item: item)) != nil)
     }
     
     
@@ -47,7 +51,7 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
     }
     
     func viewDidLoad() {
-        self.quotesStrings = []
+        self.iKartItemList = []
         view?.showHUD()
         interactor?.loadQuotes()
     }
@@ -58,7 +62,7 @@ class IKartItemListPresenter : ViewToPresenterItemListProtocol{
 extension IKartItemListPresenter : InteractorToPresenterItemListProtocol  {
     
     func fetchQuotesSuccess(quotes: [IKartItem]) {
-        self.quotesStrings! += quotes
+        self.iKartItemList! += quotes
         view?.hideHUD()
         view?.onFetchQuotesSuccess()
     }
