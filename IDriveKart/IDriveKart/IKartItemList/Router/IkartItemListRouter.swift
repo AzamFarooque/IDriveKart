@@ -37,5 +37,4 @@ class IKartItemListRouter : PresenterToRouterItemListProtocol{
             .pushViewController(quoteDetailViewController, animated: true)
         
     }
-    
 }

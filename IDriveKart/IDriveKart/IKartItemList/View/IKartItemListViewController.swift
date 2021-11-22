@@ -22,6 +22,7 @@ class IKartItemListViewController : UIViewController {
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         return refreshControl
     }()
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = 70

@@ -66,7 +66,7 @@ struct IkartItemDataRepository : IKarttemRepository{
     
     
     func update(item : IKartItem) -> Bool {
-        let cdEmployee = getCDEmployee(byIdentifier: item.id!)
+        let cdEmployee = getCDItem(byIdentifier: item.id!)
         guard cdEmployee != nil else {return false}
         cdEmployee?.itemInCart = !item.inCart! 
         
@@ -76,12 +76,12 @@ struct IkartItemDataRepository : IKarttemRepository{
     
     
     func get(byIdentifier id: String) -> IKartItem? {
-        let result = getCDEmployee(byIdentifier: id)
+        let result = getCDItem(byIdentifier: id)
         guard result != nil else {return nil}
         return result?.convertToEmployee()
     }
     
-    private func getCDEmployee(byIdentifier id: String) -> CdItem?
+    private func getCDItem(byIdentifier id: String) -> CdItem?
     {
         let fetchRequest = NSFetchRequest<CdItem>(entityName: "CdItem")
         let predicate = NSPredicate(format: "itemId==%@", id as CVarArg)
